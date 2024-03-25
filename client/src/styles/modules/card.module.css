@@ -1,0 +1,40 @@
+.card {
+    width: 186px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 1rem;
+    justify-content: space-evenly;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 186px;
+    height: 186px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+.albumName {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    user-select: none;
+}
