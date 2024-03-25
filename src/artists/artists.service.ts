@@ -7,7 +7,7 @@ export class ArtistsService {
         @Inject('ARTISTS_REPOSITORY') private artistsRepository: typeof Artists
     ) { }
 
-    async findAll(limit: number = 10, page?: number): Promise<Artists[]> {
+    async findAll(limit: number, page?: number): Promise<Artists[]> {
         const offset = page ? (page - 1) * limit : 0;
         return this.artistsRepository.findAll({
             limit,
@@ -15,7 +15,6 @@ export class ArtistsService {
         });
     }
 
-    // Trouve un artiste spécifique par son ID
     async findOne(id: number): Promise<Artists | null> {
         return this.artistsRepository.findByPk(id);
 

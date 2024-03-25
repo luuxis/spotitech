@@ -10,7 +10,7 @@ export class AlbumsService {
     private tracksService: TracksService,
   ) { }
 
-  async findAll(limit: number = 10, page?: number): Promise<any> {
+  async findAll(limit: number, page?: number): Promise<any> {
     if (page) {
       const offset = (page - 1) * limit >= 0 ? (page - 1) * limit : 0;
       return await this.albumsRepository.findAll({

@@ -10,7 +10,7 @@ export class GenresService {
     @Inject('GENRES_ALBUMS_REPOSITORY') private genresAlbumsRepository: typeof GenreAlbum
   ) {}
 
-  async findAll(limit: number = 10, page?: number): Promise<Genres[]> {
+  async findAll(limit: number, page?: number): Promise<Genres[]> {
     const offset = page ? (page - 1) * limit : 0;
     return this.genresRepository.findAll({
       limit,
