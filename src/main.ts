@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
-async function bootstrap() {
+(async () => {
     const app = await NestFactory.create(AppModule);
 
     const config = new DocumentBuilder()
@@ -16,7 +16,6 @@ async function bootstrap() {
 
     app.enableCors();
 
-    await app.listen(3000, () => console.log(`Application is running on: http://localhost:3000`));
-}
+    await app.listen(3000);
+})();
 
-bootstrap();
